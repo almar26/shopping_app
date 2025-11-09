@@ -4,6 +4,7 @@ import 'package:shopping_app/providers/cart_provider.dart';
 import 'package:shopping_app/screens/auth/login_screen.dart';
 
 void main() {
+  
   runApp(
     ChangeNotifierProvider(
       create: (_) => CartProvider(),
@@ -28,6 +29,11 @@ class MainApp extends StatelessWidget {
         //colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange).copyWith(secondary: Colors.deepOrangeAccent)
         ),
       home: LoginScreen(),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => SplashScreen(),
+      //   '/home': (context) => HomeScreen()
+      // },
     );
   }
 }

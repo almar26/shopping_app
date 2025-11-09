@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+  #flutter_native_splash: ^2.4.7
   provider: ^6.1.5+1
 
 dev_dependencies:
@@ -20,3 +22,20 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon_ios.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon/app_icon_ios.png"
+
+# flutter_native_splash:
+#   color: "#FFFFFF"                     # Background color (hex)
+#   image: assets/icon/app_icon.png      # Your splash image or logo
+#   #branding: assets/icon/branding.png   # (Optional) small logo or text below
+#   android: true
+#   ios: true
+#   web: false
+#   android_12:
+#     color: "#FFFFFF"
