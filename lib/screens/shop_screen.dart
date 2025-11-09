@@ -121,7 +121,7 @@ class ShopScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final product = products[index];
           return Card(
-            surfaceTintColor: Colors.black45,
+            //surfaceTintColor: Colors.black45,
             color: Colors.white,
             elevation: 0,
             shape: RoundedRectangleBorder(

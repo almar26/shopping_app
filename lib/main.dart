@@ -22,8 +22,10 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Add to Cart App',
       theme: ThemeData(
+        useMaterial3: true,
         //primarySwatch: Colors.orange
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange).copyWith(secondary: Colors.deepOrangeAccent)
+        primaryColor: Colors.deepOrangeAccent
+        //colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange).copyWith(secondary: Colors.deepOrangeAccent)
         ),
       home: LoginScreen(),
     );

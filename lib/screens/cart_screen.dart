@@ -54,8 +54,21 @@ class CartScreen extends StatelessWidget {
                       SizedBox(height: 10),
                       Container(
                         decoration: BoxDecoration(
+                          // boxShadow: [
+                          //   BoxShadow(
+                          //     color: Colors.black.withOpacity(
+                          //       0.2,
+                          //     ), // shadow color with opacity
+                          //     spreadRadius: 2, // how wide the shadow spreads
+                          //     blurRadius: 8, // softness of the shadow
+                          //     offset: Offset(
+                          //       2,
+                          //       4,
+                          //     ), // position of the shadow (x, y)
+                          //   ),
+                          // ],
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(12),
                         ),
                         child: ListTile(
                           leading: Image.asset(product.image, width: 80),
