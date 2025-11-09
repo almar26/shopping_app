@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-// import 'package:shopping_app/screens/bottom_nav_bar.dart';
-import 'package:shopping_app/screens/auth/login_screen.dart';
+import 'package:shopping_app/screens/auth/signup_screen.dart';
+import 'package:shopping_app/screens/bottom_nav_bar.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _isLoading = false;
@@ -22,23 +22,36 @@ class _SignupScreenState extends State<SignupScreen> {
       _isLoading = true;
     });
 
-    await Future.delayed(Duration(seconds: 2));
-    setState(() {
-      _isLoading = false;
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          //backgroundColor: Colors.red,
-          content: Row(
-            children: [
-              Icon(Icons.warning, color: Colors.white),
-              const SizedBox(width: 20),
-              Text('Invalid username or password'),
-            ],
-          ),
-        ),
+    if (username == _usernameController.text &&
+        password == _passwordController.text) {
+      await Future.delayed(Duration(seconds: 2));
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BottomNavBar()),
       );
-    });
+      setState(() {
+        _isLoading = false;
+      });
+      // Navigator.pushNamed(context, '/home');
+    } else {
+      await Future.delayed(Duration(seconds: 2));
+      setState(() {
+        _isLoading = false;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red,
+            content: Row(
+              children: [
+                Icon(Icons.warning, color: Colors.white),
+                const SizedBox(width: 20),
+                Text('Invalid username or password'),
+              ],
+            ),
+          ),
+        );
+      });
+    }
   }
 
   @override
@@ -54,10 +67,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 //Image.asset('assets/logo.png',),
                 Image.asset('assets/logo.png', width: 170),
-                Text(
-                  "Let's create an account for you",
-                  style: TextStyle(fontSize: 15),
-                ),
+                Text('Welcome back, pleasse sign in..'),
             
                 const SizedBox(height: 30),
             
@@ -106,30 +116,6 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
             
-                const SizedBox(height: 12),
-            
-                TextField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Confirm password',
-                    labelStyle: TextStyle(color: Colors.grey.shade700),
-                    hintText: 'Input password',
-                    hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
-                    fillColor: Colors.white,
-                    filled: true,
-                    prefixIcon: Icon(Icons.lock),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade300),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade400),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-            
                 const SizedBox(height: 20),
             
                 SizedBox(
@@ -137,7 +123,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: ElevatedButton(
                     onPressed: login,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: Colors.deepOrangeAccent,
                       foregroundColor: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 15),
                     ),
@@ -150,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               strokeWidth: 2.0,
                             ),
                           )
-                        : Text('Sign Up', style: TextStyle(fontSize: 15)),
+                        : Text('Sign In', style: TextStyle(fontSize: 15)),
                   ),
                 ),
             
@@ -164,11 +150,11 @@ class _SignupScreenState extends State<SignupScreen> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => LoginScreen()),
+                      MaterialPageRoute(builder: (_) => SignupScreen()),
                     );
                   },
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(color: Colors.blue, fontSize: 16),
                   ),
                 ),

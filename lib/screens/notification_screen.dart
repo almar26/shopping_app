@@ -13,7 +13,7 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.deepOrangeAccent,
         foregroundColor: Colors.white,
         title: Text('Notifications'),
         actions: [
@@ -33,10 +33,10 @@ class NotificationScreen extends StatelessWidget {
                 Positioned(
                   child: CircleAvatar(
                     radius: 10,
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.white,
                     child: Text(
                       '${cart.itemCount}',
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      style: TextStyle(color: Colors.red, fontSize: 12),
                     ),
                   ),
                 ),

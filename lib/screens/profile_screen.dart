@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/providers/cart_provider.dart';
 import 'package:shopping_app/screens/cart_screen.dart';
-import 'package:shopping_app/screens/login_screen.dart';
+import 'package:shopping_app/screens/auth/login_screen.dart';
 import 'package:shopping_app/screens/message_screen.dart';
 import 'package:shopping_app/screens/settings_screen.dart';
 
@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.deepOrangeAccent,
         foregroundColor: Colors.white,
         title: Text('Profile'),
         actions: [
@@ -44,10 +44,10 @@ class ProfileScreen extends StatelessWidget {
                 Positioned(
                   child: CircleAvatar(
                     radius: 10,
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.white,
                     child: Text(
                       '${cart.itemCount}',
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      style: TextStyle(color: Colors.red, fontSize: 12),
                     ),
                   ),
                 ),
@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurpleAccent,
+                  backgroundColor: Colors.deepOrangeAccent,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusGeometry.circular(10),

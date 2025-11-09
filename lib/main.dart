@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/providers/cart_provider.dart';
-import 'package:shopping_app/screens/login_screen.dart';
+import 'package:shopping_app/screens/auth/login_screen.dart';
 
 void main() {
   runApp(
@@ -21,7 +21,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Add to Cart App',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        //primarySwatch: Colors.orange
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange).copyWith(secondary: Colors.deepOrangeAccent)
+        ),
       home: LoginScreen(),
     );
   }

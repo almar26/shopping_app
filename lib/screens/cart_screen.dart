@@ -25,7 +25,7 @@ class CartScreen extends StatelessWidget {
             icon: Icon(Icons.message_outlined),
           ),
         ],
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.deepOrangeAccent,
         foregroundColor: Colors.white,
       ),
       body: items.isEmpty
@@ -102,7 +102,7 @@ class CartScreen extends StatelessWidget {
 
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(16),
-        color: Colors.deepPurple,
+        color: Colors.deepOrangeAccent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
